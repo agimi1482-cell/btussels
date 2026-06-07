@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City 2 — Curated Retail & Tenant Showcase</title>
+    
+    <!-- Google Fonts: Sharp, premium sans-serif and elegant display serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FCFBF9;        /* Off-white canvas */
+            --color-dark: #121212;      /* Deep obsidian black */
+            --color-accent: #B89047;    /* Matte brushed gold */
+            --color-muted: #6E6D6A;     /* Warm slate grey */
+            --color-border: #E5E2DC;    /* Subtle separation lines */
+            --font-serif: 'Cinzel', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-dark);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Editorial Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 6vw;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 500;
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-muted);
+            font-weight: 500;
+        }
+
+        /* Asymmetric Hero Frame */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            min-height: 80vh;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-left {
+            padding: 10vw 6vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            color: var(--color-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            max-width: 520px;
+            margin-bottom: 3rem;
+        }
+
+        .btn-editorial {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            color: var(--color-dark);
+            border-bottom: 1px solid var(--color-dark);
+            padding-bottom: 0.5rem;
+            width: fit-content;
+            transition: var(--transition);
+        }
+
+        .btn-editorial:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+            padding-left: 10px;
+        }
+
+        /* Architectural Frame placeholder for modern retail visuals */
+        .hero-right {
+            background-color: #F1EFEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4vw;
+            border-left: 1px solid var(--color-border);
+            position: relative;
+        }
+
+        .lookbook-frame {
+            border: 1px solid var(--color-border);
+            background: #FFFFFF;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+        }
+
+        .lookbook-frame h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .lookbook-frame p {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Tenant Grid Concept */
+        .tenants-section {
+            padding: 8vw 6vw;
+            background-color: #FFFFFF;
+        }
+
+        .section-header {
+            max-width: 600px;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header p {
+            color: var(--color-muted);
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            border: 1px solid var(--color-border);
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: var(--color-bg);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--color-dark);
+            background-color: #FFFFFF;
+            transform: translateY(-4px);
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--color-border);
+            padding-top: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-dark);
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        /* Tenant Custom Promo Request Form */
+        .contact-section {
+            background-color: #F8F6F2;
+            border-top: 1px solid var(--color-border);
+            padding: 8vw 6vw;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 6vw;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text p {
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .form-container {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            color: var(--color-dark);
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            padding: 0.8rem;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--color-dark);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--color-dark);
+            background-color: #FFFFFF;
+        }
+
+        .btn-black {
+            background-color: var(--color-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 1.1rem;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .btn-black:hover {
+            background-color: var(--color-accent);
+        }
+
+        /* Minimalistic Footer */
+        footer {
+            padding: 5rem 6vw;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            background-color: var(--color-bg);
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-sub {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right {
+                padding: 10vw 6vw;
+                border-left: none;
+                border-top: 1px solid var(--color-border);
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">City<span>2</span></a>
+        <div class="nav-meta">Brussels • Rue Neuve 123</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="hero-sub">Curated Digital Experiences</span>
+            <h1>A modern spotlight for your premier brands.</h1>
+            <p>
+                An elegant, responsive showcase designed to highlight featured tenants, brand takeovers, and seasonal pop-ups in the heart of Brussels. Give your physical retailers a premium home on the modern web.
+            </p>
+            <a href="#showcase" class="btn-editorial">Explore Tenant Layouts</a>
+        </div>
+        
+        <div class="hero-right">
+            <div class="lookbook-frame">
+                <h3>Spring Lookbook</h3>
+                <p>Discover carefully curated apparel and lifestyle edits from our premium ground-floor retailers.</p>
+                <div class="btn-editorial" style="cursor: pointer;">Browse Edition</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Tenant Grid Section -->
+    <section class="tenants-section" id="showcase">
+        <div class="section-header">
+            <h2>The Tenant Spotlight Concept</h2>
+            <p>A structured, aesthetic format designed to focus on clean branding and critical visiting details. Highly legible and frictionless on mobile screens.</p>
+        </div>
+
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">Premium Fashion</span>
+                    <h4>Maison de Paris</h4>
+                    <p>French-inspired high street basics and sustainable linen apparel designed for elegant everyday silhouettes.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Level 0</span>
+                    <span>Exclusive Offers</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">Artisanal Dining</span>
+                    <h4>Le Grand Café</h4>
+                    <p>Organic specialty espresso brews, biological pastries, and curated light lunches sourced from regional farms.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Level 1</span>
+                    <span>In-Shop Dining</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">Wellness & Beauty</span>
+                    <h4>Botanique Lab</h4>
+                    <p>Sustainably packaged vegan skincare and natural cosmetic consultations crafted by leading dermatologists.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Level -1</span>
+                    <span>Consultations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form for Tenants to join -->
+    <section class="contact-section">
+        <div class="contact-text">
+            <h2>Tenant Promotional Hub</h2>
+            <p>
+                Provide your retailers with a seamless portal to submit seasonal events, discount periods, and boutique product highlights to be featured on this curated digital board.
+            </p>
+            <p style="font-size: 0.9rem; font-style: italic;">
+                Operational inquiries can be directed to the main administration secretariat.
+            </p>
+        </div>
+
+        <div class="form-container">
+            <form action="mailto:secretariat@city2.be" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="tenant-name">Tenant / Brand Name</label>
+                    <input type="text" id="tenant-name" name="brand_name" required placeholder="E.g., Botanique Lab">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Mall Location</label>
+                    <select id="location" name="location">
+                        <option value="level-0">Level 0 (Ground Floor)</option>
+                        <option value="level-1">Level 1</option>
+                        <option value="level-minus-1">Level -1</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Promotion Details</label>
+                    <textarea id="content" name="promotion_details" rows="3" required placeholder="Describe the event, pop-up, or promotion to feature..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-black">Submit Promotion Draft</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">City2 Brussels</div>
+        <p class="footer-sub">Interactive tenant lookbook concept • Rue Neuve 123, 1000 Brussels</p>
+    </footer>
+
+</body>
+</html>
